@@ -1,0 +1,150 @@
+body{
+    margin: 0;
+    background-color: white;
+}
+
+.giris-cikis-butonu{
+    border:none;
+    height: 60px;
+    background-color: rgb(86, 86, 133);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    float: right;
+    padding-right: 5%;
+    outline: none;
+}
+
+
+
+.slider{
+    width: 50%;
+    height: 6px;
+    border-radius: 5px;
+    background: rgba(23, 24, 66, 0.4);
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    -webkit-appearance: none;
+    outline: none;
+
+}
+
+.sliderText{
+    margin-top: 30px;
+    width: 50%;
+    height: 40px;
+    font-size: 32px;
+    border-radius: 100px;
+    border: 3px solid rgb(91, 91, 138);
+    text-align: center;
+    outline: none;
+}
+.textname{
+    display: inline;
+    font-size: 32px;
+}
+.krediHesap{
+    margin-left: 5%;
+    margin-top: 5%;
+    float: left;
+    width: 45%;
+    height: 60%;
+}
+.slider:hover {
+    opacity: 1;
+
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+.baslık{
+    font-size: 48px;
+    color: rgb(91, 91, 138);
+}
+.limit{
+    color : grey;
+    font-size: 12px;
+}
+.limits{
+    text-align: center;
+    color : grey;
+    font-size: 12px;
+}
+.hesapla{
+    border: 0px;
+    color:white;
+    background-color: rgb(91, 91, 138);
+    border-radius: 100px;
+    width: 50%;
+    height: 50px;
+    font-size: 34px;
+    outline: none;
+}
+.hesapla:hover{
+    background-color: rgb(61, 61, 94);
+}
+.hesap{
+    float: left;
+    width: 25%;
+    margin-top: 6%;
+}
+.hesap1{
+    float: left;
+    width: 25%;
+    margin-top: 6%;
+}
+.onayladiv{
+    width: 100%;
+    height: 20%;
+}
+.onayla{
+    margin-top: 10px;
+    border: 0px;
+    color:white;
+    background-color: rgb(91, 91, 138);
+    border-radius: 100px;
+    width: 50%;
+    height: 50px;
+    font-size: 34px;
+    outline: none;
+    display: none;
+}
+.onayla:hover{
+    background-color: rgba(91, 91, 138,0.8);
+    color: white;
+}
+.tablo{
+    margin:auto;
+    margin-left: 0;
+    border: 2px solid rgb(91, 91, 138);
+    width: 45%;
+    height: 65px;
+    text-align: center;
+    font-size: 30px;
+    border-left-color: white;
+}
+.tabloisim{
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: 65px;
+    border: 2px solid rgb(91, 91, 138);
+    font-size: 32px;
+    border-right-color: white;
+}

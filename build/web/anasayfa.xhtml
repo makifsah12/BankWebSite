@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <link rel="icon" href="https://icons.iconarchive.com/icons/google/noto-emoji-travel-places/1024/42492-bank-icon.png" type="image/x-icon"></link>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu"></link>
+    <title>Çiftlik Bank</title>
+    <h:outputStylesheet library="css" name="anasayfacss.css" />
+    <h:outputStylesheet library="css" name="ortakcss.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/fontawesome.css" rel="stylesheet"></link>
+</h:head>
+<h:body>
+    <div id="logolar">
+        <h1><a href="anasayfa.xhtml" style="float: left; text-decoration: none; color: white; font-family: 'Ubuntu'">Çiftlik Bank</a></h1>
+        <h:form>
+            <h:commandButton value ="#{newClass.signValue}" action="#{newClass.cikisYap()}" 
+                             class="submit" styleClass="giris-cikis-butonu">
+            </h:commandButton>
+        </h:form>
+        <a href="faces/sube_main.xhtml" style="margin: 0; color: white; float: right; font-family: 'Ubuntu'; line-height: 60px; text-align: center; font-size: 15px; padding-right: 1%;">#{newClass.isim_soyisim}</a>
+    </div>
+    <div class="top-nav">
+        <ul>
+            <li><a href="faces/anasayfa.xhtml">Anasayfa</a></li>
+            <li><a href="faces/hakkimizda.xhtml">Hakkımızda</a></li>
+            <li><a href="faces/iletisim.xhtml">İletişim</a></li>
+        </ul>
+    </div>
+    <div style="display: block;">
+        <div style="width: 20%; float: left;">
+            <div id="icerikler">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
+                    more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+        </div>
+
+        <div style="width: 60%; float: left;">
+            <div id="icerikler">
+                <img src="https://www.ziraatbank.com.tr/PublishingImages/Subpage/bankamiz/BankamizTarihcesi/tarihce2.jpg"></img>
+                <p>19. yüzyılın ilk yarısında Osmanlı İmparatorluğu'nda, ticaret ve finansmanda batılı modellerin benimsenmesiyle birlikte, yabancı bankalar ülke toprakları içinde faaliyet göstermeye başlamıştı. O dönemlerde ülkede henüz, ulusal niteliğe sahip bir bankacılık sisteminin kurulması için yeterli sermaye birikimi oluşmamıştı ve bir kaynak oluşturma aracı olarak milli bankaların varlığından söz edilemiyordu.
+
+Bu durumdan en çok zarar gören kesim ise çalışan nüfusun büyük çoğunluğunu oluşturan çiftçilerdi. Çünkü tamamen kendi kaderine terkedilmiş tarım kesiminde, geçim sıkıntısı içinde bulunan büyük bir çiftçi topluluğu başvurabilecekleri kurumsal bir finansal yapı olmadığı için, sürekli olarak özel şahıs kredilerine muhtaç durumdaydı. Kredileri verenler, bu işi meslek edinmiş faizci kimselerin yanı sıra, tarım gereçlerini satan tüccar, toptancı, ihracatçı, komisyoncu, kabzımal ve köy bakkalı gibi çeşitli ticaret erbabı ve esnaflardı. Bu tür yüksek faizli özel şahıs kredilerine Tefeci veya Murabaha Kredileri denilmekteydi.Memleket Sandıkları adını ahşap kasalardan almaktaydı.
+
+Sandıkla ilgili işler katılımcı köylüler tarafından seçilen 2'si Müslüman, 2'si Hristiyan 4 kişilik sandık eminlerince yönetilmekteydi. Günlük işlemlerin yazıldığı yevmiye defteri, tüm hesapların kayıtlı olduğu defter-i kebir ve eldeki nakit paralar bu ahşap kasalarda saklanırdı. Daha sonraları güvenlik nedeniyle bu sandıkların yerine yöredeki ustalar tarafından demirden yapılan ilkel kasalar kullanılmaya başlanıldı.
+
+1867 yılında "Memleket Sandıkları Nizamnamesi"nin yürürlüğe girmesiyle Osmanlı Devleti'nin her yanında (Rusçuk, Eski Cuma ve Lefkoşe sandıkları ilk örneklerdendir) sandıklar faaliyete başlamış ve uzun yıllar başarıyla hizmet vermiştir.
+
+Kredilendirme işlemleri sonucu elde edilen gelirlerinden giderlerin düşülmesi suretiyle ulaşılan sandık karının 2/3'ü sandığın bulunduğu yörenin okul, yol, köprü gibi ortak kullanıma açık temel gereksinimlerinin yapım ve onarımında kullanılmıştır. Bu yönüyle Memleket Sandıkları ülkenin imarına da katkıda bulunmuşlardır. Ancak izleyen yıllarda sandıkların işleyişinde gözlenen bozulmalar, Memleket Sandıkları'nın etkinliklerini azaltmıştır. Sandıkları merkezi yönetime bağlayarak olumsuzlukları giderebileceğini düşünen hükümet, 1883'te aynı amaçlar doğrultusunda "Menafi Sandıkları"nı kurmuştur. Menafi Sandıkları'na geçilmesiyle idare yeniden düzenlenmiş, kayıt ve muhasebe işleri çağdaş ve ilmi esaslara uygun olarak yürütülmeye başlanmış ve merkezi hükümetin doğrudan denetimine tabi tutulmuştur. Bu yeni yapılanma; sandıkların idaresine nispeten ciddi, bilimsel denetime açık bir işleyiş kazandırsa da tamamen yeni, çağdaş bir örgütlenmeye duyulan gereksinimin önünü alamamıştır.
+
+Menafi Sandıkları'nın ihtiyaca cevap vermediği, esasen idari yönden revizyon gerektiği ve kaynaklarının sınırlı olduğu gerçekleri de eklenince, mevcut örgütlenmenin bir banka şeklinde organize edilmesi fikir ve eğilimi olgunlaşmış, II. Abdülhamit nezdinde de bu konu üzerinde ciddiyetle düşünülmüştür. Sadrazam Kamil Paşa'nın Bakanlar Kurulu ve II. Abdülhamit'e sunduğu mazbatada Menafi Sandıkları'nın artık fonksiyonlarını yerine getirememeleri sebebiyle kaldırılarak bunların yerine Ziraat Bankası kurulması gerekliliği kaleme alınmıştır. Söz konusu mazbatanın II. Abdülhamit'in olur ve onayıyla yürürlüğe girmesiyle 15 Ağustos 1888'de Menafi Sandıkları'nın yerine işlevlerini üstlenecek modern finans kuruluşu olarak Ziraat Bankası resmen kurulmuş, o tarihte faaliyette bulunan Menafi Sandıkları da banka şubelerine dönüştürülerek faaliyete başlamıştır. O güne kadar Menafi Sandıkları'nın mali kaynağını oluşturan menafi hisseleri bankaya devredilmiş ve bundan sonraki hisseler de bankanın sermayesine tahsis edilmiştir. Bu adımla birlikte, teşkilatlı tarımsal kredi tarihimizde yeni bir dönem başlamıştır.</p>
+            </div>
+        </div>
+        <div style="width: 20%; float: left;">
+            <div id="icerikler">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
+                    more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+        </div>
+
+    </div>
+</h:body>
+
+</html>

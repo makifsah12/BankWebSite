@@ -1,0 +1,103 @@
+body{
+    font-family: 'Ubuntu';
+}
+
+#logolar{
+    height: 60px;
+    background-color: rgb(86, 86, 133);
+}
+
+#logolar h1{
+    padding-left: 5%;
+    color: white;
+    margin: 0;
+    text-align: center;
+    line-height: 60px
+}
+
+#logolar h3{
+    float: right;
+    color: white;
+    margin: 0;
+    text-align: center;
+    line-height: 60px;
+    padding-right: 30px;
+}
+
+.top-nav{
+    background-color: rgb(91, 91, 138);
+    overflow: hidden;
+    width: 100%;
+}
+
+.top-nav ul{
+    margin: auto;
+    margin-left: 0;
+    -webkit-padding-start: 0;
+}
+
+.top-nav ul li{
+    list-style-type: none;
+    float: left;
+}
+
+.top-nav ul li a{
+    border: none;
+    border-top: 2px solid transparent;
+    float: left;
+    text-decoration: none;
+    padding: 18px 16px;
+    background-color: rgb(91, 91, 138);
+    color: white;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+}
+
+.top-nav ul li a:hover{
+    border-top: 2px solid white;
+    background: rgb(99, 99, 145);
+}
+
+#icerikler{
+    border: 1px solid rgb(91, 91, 138);
+    border-radius: 10px;
+    min-height: 300px;
+    margin: 5px 5px;
+    padding: 10px;
+    border-bottom: 5px solid rgb(91, 91, 138);
+}
+
+.giris-cikis-butonu{
+    border:none;
+    height: 60px;
+    background-color: rgb(86, 86, 133);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    float: right;
+    padding-right: 5%;
+    outline: none;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Çiftlik Bank</title>
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"></link>
+        <h:outputStylesheet library="css" name="doviz.css" />
+        <h:outputStylesheet library="css" name="ortakcss.css" />
+    </h:head>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <body>
+        <div id="logolar">
+            <h1><a href="faces/sube_main.xhtml" style="float: left; text-decoration: none; color: white; font-family: 'Ubuntu'">Çiftlik Bank</a></h1>
+            <h:form>
+                <h:commandButton value ="#{newClass.signValue}" action="#{newClass.cikisYap()}" 
+                                 class="submit" styleClass="giris-cikis-butonu">
+                </h:commandButton>
+            </h:form>
+            <a href="faces/sube_main.xhtml" style="margin: 0; color: white; float: right; font-family: 'Ubuntu'; line-height: 60px; text-align: center; font-size: 15px; padding-right: 1%;">#{newClass.isim_soyisim}</a>
+        </div>
+        <div class="top-nav">
+            <ul>
+                <li><a href="faces/kredibasvur.xhtml">Kredi Başvur</a></li>
+                <li><a href="faces/para_islemleri.xhtml">Para İşlemleri</a></li>
+                <li><a href="faces/doviz.xhtml">Döviz İşlemleri</a></li>
+                <li><a href="faces/fatura.xhtml">Fatura İşlemleri</a></li>
+            </ul>
+        </div>     
+
+        <br></br><br></br>
+        <h2 class="dovizbaslik">Döviz Çevirici</h2>
+        <p class="dovizaciklama">Aşağıdan İstediğiniz Para Birimini İstediğiniz Para Birimine Dönüştürebilirsiniz.</p>
+        
+        <div class="dovizalmakutusu">
+            <a href="faces/dovizal.xhtml" class="dovizal">Döviz al</a>
+        </div>
+
+        <div class="dovizkutusu">
+            <div class="kutu">
+                <form name="converter1">
+                    <fieldset>
+                        <p>Aşağıya TL Miktarı Giriniz</p>
+                        <input type="number" name="tl1"></input>
+
+                        <p>----------------------------------------</p>
+
+                        <p>Dolar</p>
+                        <input id="dollar1"></input><br></br>
+                        <p>----------------------------------------</p>
+
+                        <p>Euro</p>
+                        <input id="euro1"></input><br></br>
+                        <p>----------------------------------------</p>
+
+                        <p>Sterlin</p>
+                        <input id="sterlin1"></input><br></br>
+                        <p>----------------------------------------</p>
+
+                        <br></br>
+                        <input type="button" value="Dönüştür" onclick="currencyConverter(converter1.tl1.value)"></input><br></br><br></br>
+
+                        <input type="reset" value="Sıfırla"></input><br></br><br></br>
+
+                        <p align="center">Butona Basarak Sıfırlayabilirsiniz</p>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="kutu">
+                <form name="converter2">
+                    <fieldset>
+                        <p>Aşağıya Dolar Miktarı Giriniz</p>
+                        <input type="number" name="dollar2"></input>
+
+                        <p>----------------------------------------</p>
+
+                        <p>Türk Lirası</p>
+                        <input id="tl2"></input><br></br>
+                        <p>----------------------------------------</p>
+
+                        <p>Euro</p>
+                        <input id="euro2"></input><br></br>
+                        <p>----------------------------------------</p>
+
+                        <p>Sterlin</p>
+                        <input id="sterlin2"></input><br></br>
+                        <p>----------------------------------------</p>
+
+                        <br></br>
+                        <input type="button" value="Dönüştür" onclick="currencyConverter2(converter2.dollar2.value)"></input><br></br><br></br>
+
+                        <input type="reset" value="Sıfırla"></input><br></br><br></br>
+
+                        <p align="center">Butona Basarak Sıfırlayabilirsiniz</p>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="kutu">
+                <form name="converter3">
+                    <fieldset>
+                        <p>Aşağıya Euro Miktarı Giriniz</p>
+                        <input type="number" name="euro3"></input>
+
+                        <p>----------------------------------------</p>
+
+                        <p>Dolar</p>
+                        <input id="dollar3"></input><br></br>
+                        <p>----------------------------------------</p>
+
+                        <p>Türk Lirası</p>
+                        <input id="tl3"></input><br></br>
+                        <p>----------------------------------------</p>
+
+                        <p>Sterlin</p>
+                        <input id="sterlin3"></input><br></br>
+                        <p>----------------------------------------</p>
+
+                        <br></br>
+                        <input type="button" value="Dönüştür" onclick="currencyConverter3(converter3.euro3.value)"></input><br></br><br></br>
+
+                        <input type="reset" value="Sıfırla"></input><br></br><br></br>
+
+                        <p align="center">Butona Basarak Sıfırlayabilirsiniz</p>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+
+
+        <script>
+            function currencyConverter(valNum){
+            if (converter1.tl1.value &lt; 0){
+            window.alert("Enter Value Greaterthan 0");
+            }
+            else{
+            document.getElementById("dollar1").value = (valNum * 0.14).toFixed(2);
+            document.getElementById("euro1").value = (valNum * 0.13).toFixed(2);
+            document.getElementById("sterlin1").value = (valNum * 0.12).toFixed(2);
+            }
+            }
+        </script>
+
+
+        <script>
+            function currencyConverter2(valNum2){
+            if (converter2.dollar2.value &lt; 0){
+            window.alert("Enter Value Greaterthan 0");
+            }
+            else{
+            document.getElementById("tl2").value = (valNum2 * 7).toFixed(2);
+            document.getElementById("euro2").value = (valNum2 * 0.92).toFixed(2);
+            document.getElementById("sterlin2").value = (valNum2 * 0.81).toFixed(2);
+            }
+            }
+        </script>
+
+        <script>
+            function currencyConverter3(valNum3){
+            if (converter3.euro3.value &lt; 0){
+            window.alert("Enter Value Greaterthan 0");
+            }
+            else{
+            document.getElementById("dollar3").value = (valNum3 * 1.08).toFixed(2);
+            document.getElementById("tl3").value = (valNum3 * 7.59).toFixed(2);
+            document.getElementById("sterlin3").value = (valNum3 * 0.88).toFixed(2);
+            }
+            }
+        </script>
+
+    </body>
+
+
+</html>
+

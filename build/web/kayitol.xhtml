@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu"></link>
+        <title>Çiftlik Bank</title>
+        <h:outputStylesheet library="css" name="newcss1.css"/>
+        <h:outputStylesheet library="css" name="ortakcss.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    </h:head>
+    <h:body>
+        <div>
+            <h:form class="box">
+                <h1 class="giris-yap">Kayıt Ol</h1>
+                <div class="input-container">
+                    <h:inputText p:placeholder="Hesap No" value="#{newClass.hesap_numarasi}" maxlength="11" autocomplete="off"></h:inputText>
+                </div>
+                <div class="input-container">
+                    <h:inputText p:placeholder="İsim" value="#{newClass.isim_soyisim}"></h:inputText>
+                </div>
+                <div class="input-container">
+                    
+                    <h:inputSecret p:placeholder="Şifre" value="#{newClass.sifre}"></h:inputSecret>
+                </div>
+                <div class="input-container">
+                    <h:commandButton value="Giriş Yap" action="#{newClass.ekle()}" class="submit"></h:commandButton>
+                </div>
+                <p><a href="giris.xhtml">Zaten Hesabım Var</a></p>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

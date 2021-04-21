@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Çiftlik Bank</title>
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"></link>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"></link>
+        <h:outputStylesheet library="css" name="yenifatura.css"/>
+        <h:outputStylesheet library="css" name="ortakcss.css"/>
+    </h:head>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <h:body>
+        <div id="logolar">
+            <h1><a href="faces/sube_main.xhtml" style="float: left; text-decoration: none; color: white; font-family: 'Ubuntu'">Çiftlik Bank</a></h1>
+            <h:form>
+                <h:commandButton value ="#{newClass.signValue}" action="#{newClass.cikisYap()}" 
+                                 class="submit" styleClass="giris-cikis-butonu">
+                </h:commandButton>
+            </h:form>
+            <a href="faces/sube_main.xhtml" style="margin: 0; color: white; float: right; font-family: 'Ubuntu'; line-height: 60px; text-align: center; font-size: 15px; padding-right: 1%;">#{newClass.isim_soyisim}</a>
+        </div>
+        <div class="top-nav">
+            <ul>
+                <li><a href="kredibasvur.xhtml">Kredi Başvur</a></li>
+                <li><a href="para_islemleri.xhtml">Para İşlemleri</a></li>
+                <li><a href="doviz.xhtml">Döviz İşlemleri</a></li>
+                <li><a href="faces/fatura.xhtml">Fatura İşlemleri</a></li>
+            </ul>
+        </div>     
+
+        <h2>Fatura Ödeme Sayfasına Hoşgeldiniz</h2>
+        <h4>Aşağıdan istediğiniz kurumun faturasını seçip ödeyebilirsiniz</h4><hr></hr>
+
+        <div id="faturalar">
+            <div id="fatura_icerik">
+                <div style="transform: translate(0,50%)">
+                    <p>Elektrik Faturası</p>
+                    <h1>#{newClass.elektrik}</h1>
+                    <h:form>
+                        <h:commandButton value="Ödeme Yap" class="faturaOdeButon" action='#{newClass.faturaOde("elektrik")}'></h:commandButton>
+                    </h:form>
+                </div>
+            </div>
+
+            <div id="fatura_icerik">
+                <div style="transform: translate(0,50%)">
+                    <p>Su Faturası</p>
+                    <h1>#{newClass.su}</h1>
+                    <h:form>
+                        <h:commandButton value="Ödeme Yap" class="faturaOdeButon" action='#{newClass.faturaOde("su_faturasi")}'></h:commandButton>
+                    </h:form>
+                </div>
+            </div>
+
+            <div id="fatura_icerik">
+                <div style="transform: translate(0,50%)">
+                    <p>Doğalgaz Faturası</p>
+                    <h1>#{newClass.dogalgaz}</h1>
+                    <h:form>
+                        <h:commandButton value="Ödeme Yap" class="faturaOdeButon" action='#{newClass.faturaOde("dogalgaz")}'></h:commandButton>
+                    </h:form>
+                </div>
+            </div>
+
+            <div id="fatura_icerik">
+                <div style="transform: translate(0,50%)">
+                    <p>İnternet Faturası</p>
+                    <h1>#{newClass.internet}</h1>
+                    <h:form>
+                        <h:commandButton value="Ödeme Yap" class="faturaOdeButon" action='#{newClass.faturaOde("internet")}'></h:commandButton>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+    </h:body>
+</html>
+

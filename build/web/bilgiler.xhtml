@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Çiftlik Bank</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu"></link>
+        <h:outputStylesheet library="css" name="bilgilercss.css" />
+        <h:outputStylesheet library="css" name="ortakcss.css" />
+    </h:head>
+    <h:body>
+        <div id="logolar">
+            <h1><a href="anasayfa.xhtml" style="float: left; text-decoration: none; color: white; font-family: 'Ubuntu'">Çiftlik Bank</a></h1>
+            <h:form>
+                <h:commandButton value ="#{newClass.signValue}" action="#{newClass.cikisYap()}" 
+                                 class="submit" styleClass="giris-cikis-butonu">
+                </h:commandButton>
+            </h:form>
+            <p style="margin: 0; color: white; float: right; font-family: 'Ubuntu'; line-height: 60px; text-align: center; font-size: 15px; padding-right: 1%;">#{newClass.isim_soyisim}</p>
+        </div>
+        <div class="container">
+            <div class="box varlik">
+                <h1 class="solayat" > Varlıklarım </h1>
+                <hr></hr>
+
+                <h2 class="sagayat">Mehmet Akif Sahin</h2><br></br>
+                <h3 class="toplam">Toplam</h3>
+                <br></br>
+                <div class="para">
+                    <h4 class="paradegeri">100TL</h4>
+                </div>
+                <br></br><br></br>
+                <hr></hr>
+                <br></br><br></br>
+                <div class="borc-kutusu">
+                    <p class="borclar nowrap">Borçlar</p>
+                    <p class="borc-miktari nowrap">30tl</p>
+                </div>
+                <br></br><br></br>
+                <br></br><br></br>
+                <br></br><br></br>
+                <hr></hr>
+            </div>
+            <div class="box hesaplar">
+                <h1 class="solayat" > Hesaplarım </h1>
+                <hr></hr>
+                <br></br>
+                <h2 class="subebaslik"> İstanbul Subesi</h2>
+                <br></br>                <br></br>
+                <hr></hr>
+                <br></br>                <br></br>
+                <div class="xxx">
+                    <p class="bakiye nowrap1">Bakiye</p>
+                    <p class="bakiyex nowrap1">100 TL</p>
+                </div>
+                <br></br>                <br></br>
+                <hr></hr>
+                <br></br>                <br></br>
+                <p class="bakiye2 nowrap2">Kullanılabilir Bakiye</p>
+                <p class="bakiye2x nowrap2">50TL</p>
+                <br></br>                <br></br><br></br>
+                <hr></hr>
+                <br></br>                <br></br>
+                <p class="iban nowrap3">IBAN</p>
+                <p class="ibanx nowrap3">TR56 0006 2000 0001 2990 0226 04</p>
+            </div>
+            <div class="box kredi kartlari">
+                <h1 class="solayat" > Kredi Kartlarım </h1>
+                <hr></hr>
+                <p class="kartuyari"> Şu anda kullanılabilir kredi kartınız bulunmamaktadır</p>
+            </div>
+        </div>
+    </h:body>
+</html>

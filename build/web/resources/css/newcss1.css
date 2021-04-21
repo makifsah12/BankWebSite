@@ -1,0 +1,106 @@
+body{
+    background-image: url("unnamed1.jpg");
+    background-size: cover;    
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+#title-ikon{
+    width: 100%;
+    height: 100px;
+}
+
+#title-ikon div{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    height: 100px;
+}
+
+#title-ikon h1{
+    float: left;
+    height: 100px;
+    text-align: center;
+    margin: 0;
+    font-size: 65px;
+    top: -50%;
+    color: rgb(91, 91, 138);
+    filter: grayscale(100%);
+}
+#title-ikon img{
+    float: left;
+    filter: grayscale(100%);
+}
+
+p a{
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+p a:active{
+    color: grey;
+}
+
+.box{
+    width: 30%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(23, 24, 66, 0.4);
+    transform: translate(-50%, -50%);    
+    text-align: center;
+    border-radius: 50px;
+}
+
+.box input{
+    margin-top: 5px;
+    background: none;
+    color: white;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0%);
+    width: 55%;
+    text-align: center;
+    transition: 400ms;
+    padding: 14px 10px;
+    border-radius: 100px;
+    box-sizing: content-box;
+    display: block;
+    border: 2px solid white;
+    outline: none;
+    font-size: 15px;
+}
+
+.box input::placeholder{
+    color: white;
+}
+
+.box input[type="text"]:focus, .box input[type="password"]:focus{
+    background-color: rgb(91, 91, 138);
+    width: 60%;
+}
+
+.box input[type="submit"]{
+    
+    text-align: center;
+}
+.box input[type="submit"]:hover{
+    background-color: rgb(91, 91, 138);
+}
+
+.box h1{
+    font-weight: 500;
+    color: white;
+}

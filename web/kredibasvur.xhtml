@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <link rel="icon" href="https://icons.iconarchive.com/icons/google/noto-emoji-travel-places/1024/42492-bank-icon.png" type="image/x-icon"></link>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu"></link>
+        <title>Çiftlik Bank</title>
+        <h:outputStylesheet library="css" name="kredibasvurcss.css" />
+        <h:outputStylesheet library="css" name="ortakcss.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/fontawesome.css" rel="stylesheet"></link>
+    </h:head>
+    <h:body>
+        <div id="logolar">
+            <h1><a href="faces/sube_main.xhtml" style="float: left; text-decoration: none; color: white; font-family: 'Ubuntu'">Çiftlik Bank</a></h1>
+            <h:form>
+                <h:commandButton value ="#{newClass.signValue}" action="#{newClass.cikisYap()}" 
+                                 class="submit" styleClass="giris-cikis-butonu">
+                </h:commandButton>
+            </h:form>
+            <a href="faces/sube_main.xhtml" style="margin: 0; color: white; float: right; font-family: 'Ubuntu'; line-height: 60px; text-align: center; font-size: 15px; padding-right: 1%;">#{newClass.isim_soyisim}</a>
+        </div>
+        <div class="top-nav">
+            <ul>
+                <li><a href="kredibasvur.xhtml">Kredi Başvur</a></li>
+                <li><a href="para_islemleri.xhtml">Para İşlemleri</a></li>
+                <li><a href="doviz.xhtml">Döviz İşlemleri</a></li>
+                <li><a href="faces/fatura.xhtml">Fatura İşlemleri</a></li>
+            </ul>
+        </div>
+        <div style="height :600px;">
+            <div class="krediHesap">
+                <script type="text/javascript">
+                    function updateTextInput(val) {
+                        document.getElementById('form:textInput').value = val;
+                    }
+                    function updateTextInput1(val) {
+                        document.getElementById('form:textInput1').value = val;
+                    }
+                    function hesapla(ay, miktar) {
+                        var x = (miktar * 0.01 * ay).toFixed(2);
+                        var y = parseInt(x) + parseInt(miktar);
+                        document.getElementById("fpara").innerHTML = (x);
+                        document.getElementById("aylık").innerHTML = (y / ay).toFixed(2);
+                        document.getElementById("toplam").innerHTML = (y);
+                        document.getElementById("faiz").innerHTML = 1 + "%";
+                        document.getElementById("ay").innerHTML = ay;
+                        document.getElementById("kredi").innerHTML = miktar;
+                    }
+                    function showDiv() {
+                        var a = document.getElementById('form:textInput').value;
+                        var b = document.getElementById('form:textInput1').value;
+                        if (a == 0 || b == 0) {
+                            document.getElementById('hesap').style.display = "none";
+                            document.getElementById('hesap1').style.display = "none";
+                            document.getElementById('form:onaylabuton').style.display = "none";
+                        } else {
+                            document.getElementById('hesap').style.display = "block";
+                            document.getElementById('hesap1').style.display = "block";
+                            document.getElementById('form:onaylabuton').style.display = "block";
+                        }
+                        hesapla(a, b);
+                    }
+
+                </script>
+
+                <h class="baslık">Kredi Hesapla</h>
+                <br></br>
+                <h:form id="form">
+                    <h:inputText id="textInput" value="#{newClass.vade}" class="sliderText"></h:inputText>
+                    <p class="textname">AY</p>
+                    <p class="limit">0</p>
+                    <input type="range" id="slider0" name="rangeInput" min="0" max="60" oninput="updateTextInput(this.value);" class ="slider"/>
+                    <p class="limits">60</p>
+                    <br></br>
+                    <h:inputText id="textInput1" value="#{newClass.toplam_odenecek}" class="sliderText"></h:inputText>
+                    <p class="textname">TL</p>
+                    <p class="limit">0</p>
+                    <input type="range" id="slider1" name="rangeInput" min="0" max="100000" oninput="updateTextInput1(this.value);" class ="slider" step="1000"/>
+                    <p class="limits">100000</p>
+                    <input type="button" class="hesapla" onclick="showDiv()" value="Hesapla"/>
+                    <h:commandButton type="submit" id="onaylabuton" class="onayla" value="Kredi Başvur" action="#{newClass.krediBasvurusu()}"></h:commandButton> 
+                </h:form>
+            </div>
+            <div id="hesap1" style="display: none;" class="hesap1">
+                <p class="tabloisim">Toplam Ödenecek Tutar   </p>
+                <p class="tabloisim">Taksit Tutarı   </p>
+                <p class="tabloisim">Vade   </p>
+                <p class="tabloisim">Faiz Oranı   </p>
+                <p class="tabloisim">Faiz Tutarı   </p>
+                <p class="tabloisim">Kredi Miktarı   </p>
+            </div>
+            <div id="hesap" style="display: none;" class="hesap">
+                <p class="tablo" id="toplam"></p>
+                <p class="tablo" id="aylık"></p>
+                <p class="tablo" id="ay"></p>
+                <p class="tablo" id="faiz"></p>
+                <p class="tablo" id="fpara"></p>
+                <p class="tablo" id="kredi"></p>
+            </div>
+
+            <br></br>
+        </div>
+    </h:body>
+</html>

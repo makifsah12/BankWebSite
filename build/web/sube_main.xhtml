@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Çiftlik Bank</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu"></link>
+        <h:outputStylesheet library="css" name="sube_main_css.css" />
+        <h:outputStylesheet library="css" name="ortakcss.css" />
+    </h:head>
+    <h:body>
+        <div id="logolar">
+            <h1><a href="faces/sube_main.xhtml" style="float: left; text-decoration: none; color: white; font-family: 'Ubuntu'">Çiftlik Bank</a></h1>
+            <h:form>
+                <h:commandButton value ="#{newClass.signValue}" action="#{newClass.cikisYap()}" 
+                                 class="submit" styleClass="giris-cikis-butonu">
+                </h:commandButton>
+            </h:form>
+            <p style="margin: 0; color: white; float: right; font-family: 'Ubuntu'; line-height: 60px; text-align: center; font-size: 15px; padding-right: 1%;">#{newClass.isim_soyisim}</p>
+        </div>
+        <div class="top-nav">
+            <ul>
+                <li><a href="faces/kredibasvur.xhtml">Kredi Başvur</a></li>
+                <li><a href="faces/para_islemleri.xhtml">Para İşlemleri</a></li>
+                <li><a href="faces/doviz.xhtml">Döviz İşlemleri</a></li>
+                <li><a href="faces/fatura.xhtml">Fatura İşlemleri</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="box varlik">
+                <h1 class="solayat" >Varlıklarım</h1>
+                <hr></hr>
+
+                <h2 class="sagayat">#{newClass.isim_soyisim}</h2><br></br>
+                <h3 class="toplam">Toplam</h3>
+                <br></br>
+                <div class="para0">
+                    <div class="para">
+                        <h4 class="paradegeri">#{newClass.mevcut_para}TL</h4>
+                    </div>
+                </div>
+                <br></br><br></br>
+                <hr></hr>
+                <br></br><br></br>
+                <div class="borc-kutusu">
+                    <p class="borclar nowrap">Borçlar</p>
+                    <p class="borc-miktari nowrap">#{newClass.borc}TL</p>
+                </div>
+                <br></br><br></br>
+                <br></br><br></br>
+                <br></br><br></br>
+                <hr></hr>
+            </div>
+            <div class="box hesaplar">
+                <h1 class="solayat" > Hesaplarım </h1>
+                <hr></hr>
+                <br></br>
+                <h2 class="subebaslik"> İstanbul Subesi</h2>
+                <br></br>                <br></br>
+                <hr></hr>
+                <br></br>                <br></br>
+                <div class="xxx" style="width: 100%; margin-bottom: 25px">
+                    <p class="bakiye nowrap1" style="float: left;">Bakiye</p>
+                    <p class="bakiyex nowrap1" style="float: right;">#{newClass.mevcut_para}TL</p>
+                </div>
+                <br></br>                <br></br>
+                <hr></hr>
+                <br></br>                <br></br>
+                <br></br>                <br></br>
+                <br></br>                <br></br>
+            </div>
+            <div class="box kredi kartlari" style="overflow-y: scroll;">
+                <h1 class="solayat" >Son işlemler</h1>
+                <hr></hr>
+                <ui:repeat var="anlikislem" value="#{newClass.islem}" varStatus="status">
+                    <div class="islemlerblok">
+                        <p class="kartuyari">#{anlikislem}</p>
+                    </div>
+                </ui:repeat>
+            </div>
+        </div>
+
+    </h:body>
+</html>

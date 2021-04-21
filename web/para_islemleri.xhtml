@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Çiftlik Bank</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu"></link>
+        <h:outputStylesheet library="css" name="para_islemlericss.css" />
+        <h:outputStylesheet library="css" name="ortakcss.css" />
+    </h:head>
+    <h:body>
+        <div id="logolar">
+            <h1><a href="sube_main.xhtml" style="float: left; text-decoration: none; color: white; font-family: 'Ubuntu'">Çiftlik Bank</a></h1>
+            <h:form>
+                <h:commandButton value ="#{newClass.signValue}" action="#{newClass.cikisYap()}" 
+                                 class="submit" styleClass="giris-cikis-butonu">
+                </h:commandButton>
+            </h:form>
+            <a href="faces/sube_main.xhtml" style="margin: 0; color: white; float: right; font-family: 'Ubuntu'; line-height: 60px; text-align: center; font-size: 15px; padding-right: 1%;">#{newClass.isim_soyisim}</a>
+        </div>
+        <div class="top-nav">
+            <ul>
+                <li><a href="faces/kredibasvur.xhtml">Kredi Başvur</a></li>
+                <li><a href="para_islemleri.xhtml">Para İşlemleri</a></li>
+                <li><a href="doviz.xhtml">Döviz İşlemleri</a></li>
+                <li><a href="faces/fatura.xhtml">Fatura İşlemleri</a></li>
+            </ul>
+        </div>
+        <div style="display: block;">
+            <div style="width: 33%; float: left;">
+                <div id="icerikler">
+                    <h2>Para Gönder</h2>
+                    <p>Güncel Bakiye: #{newClass.mevcut_para}</p>
+                    <h:form>
+                        <div class="box">
+                            <h:inputText p:placeholder="Hesap Numarası" maxlength="11" value="#{newClass.girilenIban}" autocomplete="off"></h:inputText>
+                            <h:inputText p:placeholder="Aktarılacak Miktar(TL)" value="#{newClass.girilenPara}" autocomplete="off"></h:inputText>
+                            <h:commandButton value="Gönder" action="#{newClass.paraEkle()}"></h:commandButton>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+
+            <div style="width: 34%; float: left;">
+                <div id="icerikler">
+                    <h2>Para Çek</h2>
+                    <p>Güncel Bakiye: #{newClass.mevcut_para}</p>
+                    <h:form>
+                        <div class="box">
+                            <h:inputText p:placeholder="Aktarılacak Miktar(TL)" value="#{newClass.girilenPara}" autocomplete="off"></h:inputText>
+                            <h:commandButton value="Para Çek" action="#{newClass.paraCek()}"></h:commandButton>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+            <div style="width: 33%; float: left;">
+                <div id="icerikler">
+                    <h2>Borç Öde</h2>
+                    <p>Güncel Borç: #{newClass.borc}</p>
+                    <h:form>
+                        <div class="box">
+                            <h:inputText p:placeholder="Ödenecek Miktar(TL)" value="#{newClass.girilenPara}" autocomplete="off"></h:inputText>
+                            <h:commandButton value="Öde" action="#{newClass.borcOde()}"></h:commandButton>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+
+        </div>
+        <div style="width: 100%; margin-top: 15px; float: left;">
+            <div id="icerikler">
+                <h2>Kredi Borcu Öde</h2>
+                <p>Güncel Kredi Borcu: #{newClass.toplam_odenecek}</p>
+                <p>Kalan Taksit Sayısı: #{newClass.vade}</p>
+                <p>Aylık Ödenebilecek Borç: #{newClass.taksit_tutari}</p>
+                    <h:form>
+                        <div class="box">
+                            <h:commandButton value="Öde" action="#{newClass.krediBorcOde()}"></h:commandButton>
+                        </div>
+                    </h:form>
+            </div>
+        </div>
+    </h:body>
+</html>

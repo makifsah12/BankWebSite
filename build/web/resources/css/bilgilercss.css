@@ -1,0 +1,134 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container{
+    position: relative;
+    width: 1200px;
+    height: 750px;
+    margin: 120px auto;
+    background: transparent;
+    color: white;
+}
+
+.container .box{
+    position: relative;
+    width: 30%;
+    height: 712px;
+    padding: 10px;
+    background: rgb(80, 80, 127);    
+    margin: 10px;
+    float: left;
+
+}
+
+.container .hesaplar{
+    background: rgb(104, 104, 149);    
+}
+
+.toplam{
+    margin-bottom: 10px;
+}
+.para0{
+    width: 250px;
+    height: 250px;
+    margin-top: 10px;
+    margin-left: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    line-height: 500px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: rgb(99, 99, 145)
+}
+.para{
+    width: 215px;
+    height: 215px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    line-height: 500px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: rgb(139, 139, 185)
+}
+
+.borc-kutusu{
+    font-size: 20px;
+    align-content: left;
+    text-align: left;
+}
+
+
+.nowrap {
+    display: inline;
+}
+.borclar{
+    margin-left: 25px;
+}
+
+.borc-miktari{
+    margin-left: 175px;
+}
+
+.container .hesaplar{
+    text-align: left;
+}
+.nowrap1{
+    display: inline;
+}
+.nowrap2{
+    display: inline;
+}
+.nowrap3{
+    display: inline;
+}
+.bakiye2x{
+    margin-left: 140px;
+}
+
+.bakiyex{
+    margin-left: 247px;
+}
+
+.ibanx{
+    margin-left: 50px;
+}
+.solayat{
+    bottom: 20px;
+    left: 10px;
+    margin: 10px;
+    text-align: left;
+    font-size: 25px;
+}
+
+.bakiye{
+    font-size: 20px;
+}
+
+.bakiye2{
+    font-size: 20px;
+}
+
+.iban{
+    font-size: 20px;
+}
+
+.kartuyari{
+    margin-top: 5px;
+}
+
+.paradegeri{
+    font-size: 40px;
+}

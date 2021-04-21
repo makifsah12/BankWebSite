@@ -1,0 +1,54 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.box input{
+    margin-top: 5px;
+    background: none;
+    color: rgb(91, 91, 138);
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0%);
+    width: 55%;
+    text-align: center;
+    transition: 400ms;
+    padding: 14px 10px;
+    border-radius: 100px;
+    box-sizing: content-box;
+    display: block;
+    border: 2px solid rgb(91, 91, 138);
+    outline: none;
+    font-size: 15px;
+}
+
+#icerikler h2{
+    text-align: center; 
+    color: rgb(91, 91, 138);
+}
+
+#icerikler p{
+    text-align: center;
+    width: 100%;
+    color: rgb(91,91,138);
+    font-weight: bold;
+}
+
+.box input::placeholder{
+    color: rgb(91, 91, 138);
+}
+
+.box input[type="text"]:focus, .box input[type="password"]:focus{
+    background-color: rgb(91, 91, 138);
+    color: white;
+    width: 60%;
+}
+
+.box input[type="submit"]{
+    text-align: center;
+}
+.box input[type="submit"]:hover{
+    background-color: rgb(91, 91, 138);
+    color: white;
+}

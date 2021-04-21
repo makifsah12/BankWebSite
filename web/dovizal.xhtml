@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="icon" href="https://icons.iconarchive.com/icons/google/noto-emoji-travel-places/1024/42492-bank-icon.png" type="image/x-icon"></link>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu"></link>
+        <title>Çiftlik Bank</title>
+        <h:outputStylesheet library="css" name="dovizalcss.css" />
+        <h:outputStylesheet library="css" name="ortakcss.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/fontawesome.css" rel="stylesheet"></link>
+    </h:head>
+    <h:body>
+        <div id="logolar">
+            <h1><a href="sube_main.xhtml" style="float: left; text-decoration: none; color: white; font-family: 'Ubuntu'">Çiftlik Bank</a></h1>
+            <h:form>
+                <h:commandButton value ="#{newClass.signValue}" action="#{newClass.cikisYap()}" 
+                                 class="submit" styleClass="giris-cikis-butonu">
+                </h:commandButton>
+            </h:form>
+            <a href="faces/sube_main.xhtml" style="margin: 0; color: white; float: right; font-family: 'Ubuntu'; line-height: 60px; text-align: center; font-size: 15px; padding-right: 1%;">#{newClass.isim_soyisim}</a>
+        </div>
+        <div class="top-nav">
+            <ul>
+                <li><a href="faces/kredibasvur.xhtml">Kredi Başvur</a></li>
+                <li><a href="faces/para_islemleri.xhtml">Para İşlemleri</a></li>
+                <li><a href="faces/doviz.xhtml">Döviz İşlemleri</a></li>
+                <li><a href="faces/fatura.xhtml">Fatura İşlemleri</a></li>
+            </ul>
+        </div>
+        <h:form>
+            <script>
+                var r1=#{newClass.radio1};
+                var r2=#{newClass.radio2};
+              
+                function tahminiBelirle1(x) {
+                    if (r1 == 1) {
+                        document.getElementById("tahmini1").innerHTML=(parseFloat(x/7)).toFixed(2);
+                    }else if (r1 == 2) {
+                        document.getElementById("tahmini1").innerHTML=(parseFloat(x/7.5)).toFixed(2);
+                    }else if (r1 == 3) {
+                        document.getElementById("tahmini1").innerHTML=(parseFloat(x/8.5)).toFixed(2);
+                    }else{
+                        window.alert("Seçili Para Birimi Bulunamadı.");
+                    }
+                }
+                function tahminiBelirle2(x) {
+                    if (r2 == 1) {
+                        document.getElementById("tahmini2").innerHTML=(parseFloat(x*6.8)).toFixed(2);
+                    }else if (r2 == 2) {
+                        document.getElementById("tahmini2").innerHTML=(parseFloat(x*7.3)).toFixed(2);
+                    }else if (r2 == 3) {
+                        document.getElementById("tahmini2").innerHTML=(parseFloat(x*8.3)).toFixed(2);
+                    }else{
+                        window.alert("Seçili Para Birimi Bulunamadı.");
+                    }
+                }
+
+            </script>
+            <div class="ustdiv">
+
+            </div>
+            <div class="ortadiv">
+                <div class="ustbar">
+                    <h2 style="text-align: center; color: white;">TL BOZDUR</h2>
+                </div>
+                <div class="ortabar">
+                    <h:selectOneRadio value = "#{newClass.radio1}" styleClass="radio" id="radio1" > 
+                        <f:selectItem itemValue = "1" itemLabel = "Dolar" /> 
+                        <f:selectItem itemValue = "2" itemLabel = "Euro" />
+                        <f:selectItem itemValue = "3" itemLabel = "Sterlin" /> 
+                    </h:selectOneRadio>
+                    <h:commandButton class="button" value="Değiştir" action="#{newClass.radioDegis1()}" />
+                </div>
+                <div class="solbar">
+                    <h:inputText styleClass="deger" onkeyup="tahminiBelirle1(this.value)" value="#{newClass.girilen1}" id="input1" autocomplete="off"/>
+                    <p class="tahmini">Tahmini Tutar</p>
+                    <p id="tahmini1" class="tahmini" >0</p>
+                    <h:commandButton action="#{newClass.cevir1()}" class="button" value="BOZDUR"/>
+                </div>
+                <div class="sagbar">
+                    <p id="satis1" style="color: rgb(7,118,183);">#{newClass.alis1}</p>
+                    <img src="ch.png" width="30%" height="100px"/>
+                    <p id="alis1" style="color: rgb(0,176,134);">#{newClass.satis1}</p>    
+                </div>
+            </div>
+            <div class="ortadiv">
+                <div class="ustbar">
+                    <h2 style="text-align: center; color: white;">TL DÖNÜŞTÜR</h2>
+                </div>
+                <div class="ortabar">
+                    <h:selectOneRadio value = "#{newClass.radio2}" styleClass="radio" id="radio2"> 
+                        <f:selectItem itemValue = "1" itemLabel = "Dolar" /> 
+                        <f:selectItem itemValue = "2" itemLabel = "Euro" />
+                        <f:selectItem itemValue = "3" itemLabel = "Sterlin" /> 
+                    </h:selectOneRadio>
+                    <h:commandButton class="button" value="Değiştir" action="#{newClass.radioDegis2()}" />
+                </div>
+                <div class="solbar">
+                    <h:inputText styleClass="deger" onkeyup="tahminiBelirle2(this.value)" value="#{newClass.girilen2}" id="input2" autocomplete="off"/>
+                    <p class="tahmini">Tahmini Tutar</p>
+                    <p id="tahmini2" class="tahmini" >0</p>
+                    <h:commandButton action="#{newClass.cevir2()}" class="button" value="ÇEVİR"/>
+                </div>
+                <div class="sagbar">
+                    <p id="satis2" style="color: rgb(7,118,183);">#{newClass.satis2}</p>
+                    <img src="ch.png" width="30%" height="100px"/>
+                    <p id="alis2" style="color: rgb(0,176,134);">#{newClass.alis2}</p>    
+                </div>
+            </div>
+            <div class="altdiv">
+                <h2 style="color: rgb(91, 91, 138);">BAKİYEM</h2>
+                <p class="bakiye">TL  : </p>
+                <p id="tl" class="bakiye" style="color: rgb(61, 61, 92);" >#{newClass.tl}</p>
+                <p class="bakiye">DOLAR  : </p>
+                <p id="dolar" class="bakiye" style="color: rgb(61, 61, 92);">#{newClass.dolar}</p>
+                <p class="bakiye">EURO  : </p>
+                <p id="euro" class="bakiye" style="color: rgb(61, 61, 92);">#{newClass.euro}</p>
+                <p class="bakiye">STERLİN  : </p>
+                <p id="sterlin" class="bakiye" style="color: rgb(61, 61, 92);">#{newClass.sterlin}</p>
+            </div>
+
+
+        </h:form>
+    </h:body>
+</html>

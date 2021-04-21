@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <link rel="icon" href="https://icons.iconarchive.com/icons/google/noto-emoji-travel-places/1024/42492-bank-icon.png" type="image/x-icon"></link>
+        <title>Hakkımızda - Çiftlik Bank</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu"></link>
+        <h:outputStylesheet library="css" name="hakkimizdacss.css" />
+        <h:outputStylesheet library="css" name="ortakcss.css" />
+    </h:head>
+    <h:body>
+        <div id="logolar">
+            <h1 style="padding-left: 5%;  color: white; margin: 0; text-align: center; line-height: 60px"><a href="anasayfa.xhtml" style="float: left; text-decoration: none; color: white; font-family: 'Ubuntu'">Çiftlik Bank</a></h1>
+            <h:form>
+                <h:commandButton value ="#{newClass.signValue}" action="#{newClass.cikisYap()}" 
+                                 class="submit" styleClass="giris-cikis-butonu">
+                </h:commandButton>
+            </h:form>
+            <a href="sube_main.xhtml" style="margin: 0; color: white; float: right; font-family: 'Ubuntu'; line-height: 60px; text-align: center; font-size: 15px; padding-right: 1%;">#{newClass.isim_soyisim}</a>
+        </div>
+        <div class="top-nav">
+            <ul>
+                <li><a href="faces/anasayfa.xhtml">Anasayfa</a></li>
+                <li><a href="faces/hakkimizda.xhtml">Hakkımızda</a></li>
+                <li><a href="faces/iletisim.xhtml">İletişim</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <img style="object-fit: cover; width: 100%;" src="https://www.borsazamani.com/images/haberler/2019/11/iste_en_cok_sube_kapatip_personel_cikartan_bankalar_h13962_e9737.webp"></img>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+    </h:body>
+
+</html>

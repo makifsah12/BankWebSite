@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu"></link>
+        <title>Çiftlik Bank</title>
+        <h:outputStylesheet library="css" name="newcss1.css"/>
+        <h:outputStylesheet library="css" name="ortakcss.css" />
+    </h:head>
+    <h:body styleClass="hasbadi">
+        <div style="background-image: url('resources\at.png');">
+            <h:form class="box">
+                <h1 class="giris-yap">Giriş Yap</h1>
+                <div class="input-container">
+                    <h:inputText p:placeholder="Hesap No" value="#{newClass.hesap_numarasi}" maxlength="11" autocomplete="off"></h:inputText>
+                </div>
+                <div class="input-container">
+                    <h:inputSecret p:placeholder="Şifre" value="#{newClass.sifre}" ></h:inputSecret>
+                </div>
+                <div class="input-container">
+                    <h:commandButton value="Giriş Yap" action="#{newClass.girisYap}" class="submit"></h:commandButton>
+                </div>
+                <p><a href="kayitol.xhtml">Kayıt Ol</a></p>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+
